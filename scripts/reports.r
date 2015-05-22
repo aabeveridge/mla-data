@@ -20,20 +20,24 @@ word.freq <- rev(word.freq)
 #################################
 
 ## Open PDF device and set location to save file
-pdf("~/mla_data/reports/freq_2012.pdf", 7, 5)
+pdf("~/mla_data/plots/freq_2012.pdf", 7, 5)
 
 	## Set plot dimensions 
-	#par(pin=c(4, 4))
+	par(pin=c(4, 4))
 
 	## Draw plot
 	freq.plot <- barplot(word.freq, names.arg=word.names, horiz=TRUE, 
 						 main="2012 Word Frequencies", ylab=NULL, 
 						 xlab="Frequency", las=2, axes=FALSE)
-
+	
+	# Starting x-axis position for for() loop
+	freq.pos <- 0.65		
+	
 	## Add frequency totals to bars	
-	#for(i in 1:length(word.freq)) {		
-	#text(freq.plot$mids, labels=word.freq[i], pos=1, offset=3)
-	#}
+	for(i in 1:length(word.freq)) {			
+	text(freq.pos, labels=word.freq[i], pos=4, offset=.2)
+	freq.pos <- freq.pos + 1.2
+	}
 
 	## Add bottom axis and numeric range
 	axis(1, at=seq(0, 1200, 100))
