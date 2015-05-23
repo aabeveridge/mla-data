@@ -4,16 +4,18 @@
 
 library(tm)
 library(Rgraphviz)
+library(ggplot2)
+library(gridExtra)
 
-d1 <- read.csv("~/mla_data/data/2012/CSV_files/freq.csv")
+freq.data <- read.csv("~/mla_data/data/2012/CSV_files/freq.csv")
 #d2 <- read.csv("~/mla_data/data/2013/CSV_files/freq.csv")
 #d3 <- read.csv("~/mla_data/data/2014/CSV_files/freq.csv")
 
-rev(d1)
-d1 <- as.data.frame(d1)
-word.names <- head(d1$X, 10)
+rev(freq.data)
+freq.data <- as.data.frame(freq.data)
+word.names <- head(freq.data$X, 10)
 word.names <- rev(word.names)
-word.freq <- head(d1$Total, 10)
+word.freq <- head(freq.data$Total, 10)
 word.freq <- rev(word.freq)
 
 #################################
@@ -31,7 +33,7 @@ png("~/mla_data/plots/freq_2012.png", 600, 480)
 						 main="2012 Word Frequencies", ylab=NULL, 
 						 xlab="Frequency", las=2, axes=FALSE)
 	
-	# Starting x-axis position for for() loop
+	# Starting x-axis position for adding frequency totals to bars
 	freq.pos <- 0.65		
 	
 	## Add frequency totals to bars	
@@ -63,3 +65,17 @@ plot(dtm, terms=findFreqTerms(dtm, lowfreq=250, highfreq=2000),
      width="10.5", fontsize="14")))
 
 dev.off()
+
+#############################
+# Correlation Tables
+#############################
+
+rhet.cor <- read.csv("~/mla_data/data/2012/CSV_files/rhet-cor.csv")
+colnames(rhet.cor)[1] <- "words" 
+rhet.cor <- head(rhet.cor, 10)
+png("~/mla_data/visuals/rhet-cor_table.png", 400, 380)
+rhet.cor <- tableGrob(rhet.cor)
+grid.arrange(rhet.cor)
+dev.off()
+
+
