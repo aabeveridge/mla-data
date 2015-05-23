@@ -52,30 +52,45 @@ dev.off()
 # Correlation Cluster
 ##########################
 
+# Load in an R data space image with a Document Term Matrix
 load("~/mla_data/data/dtm.rda")
 
+# Open a PNG device to save the image that contains the cluster
 png("~/mla_data/plots/cor_cluster.png", 700, 500)
 
-##Call a list of attributions to change the look of the cluster graph
+## Call a list of attributions to change the look of the cluster graph
 defAttrs <- getDefaultAttrs()
 
+# Plot the correlation cluster
 plot(dtm, terms=findFreqTerms(dtm, lowfreq=250, highfreq=2000),
      corThreshold=0.12, attrs=list(node=list(shape = "ellipse", 
      fixedsize = TRUE, fillcolor="lightblue", height="2.6", 
      width="10.5", fontsize="14")))
 
+# Turn off the PNG device
 dev.off()
 
 #############################
 # Correlation Tables
 #############################
 
+# Create data frame from CSV file with top correlations to "rhetoric"
 rhet.cor <- read.csv("~/mla_data/data/2012/CSV_files/rhet-cor.csv")
-colnames(rhet.cor)[1] <- "words" 
+
+# Change the column name "X" to an empty space
+colnames(rhet.cor)[1] <- " " 
+
+# Set the data frame to the top 10 correlations
 rhet.cor <- head(rhet.cor, 10)
+
+# Open an PNG device to save the image that contains the table below
 png("~/mla_data/visuals/rhet-cor_table.png", 400, 380)
+
+# Create the table 
 rhet.cor <- tableGrob(rhet.cor)
 grid.arrange(rhet.cor)
+
+# Turn off the PNG device
 dev.off()
 
 
