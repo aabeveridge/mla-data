@@ -2,7 +2,8 @@
 # Reports
 ########################
 
-library(ggplot2)
+library(tm)
+library(Rgraphviz)
 
 d1 <- read.csv("~/mla_data/data/2012/CSV_files/freq.csv")
 #d2 <- read.csv("~/mla_data/data/2013/CSV_files/freq.csv")
@@ -43,4 +44,22 @@ png("~/mla_data/plots/freq_2012.png", 600, 480)
 	axis(1, at=seq(0, 1200, 100))
 
 ## Close PDF device
+dev.off()
+
+##########################
+# Correlation Cluster
+##########################
+
+load("~/mla_data/data/dtm.rda")
+
+png("~/mla_data/plots/cor_cluster.png", 700, 500)
+
+##Call a list of attributions to change the look of the cluster graph
+defAttrs <- getDefaultAttrs()
+
+plot(dtm, terms=findFreqTerms(dtm, lowfreq=250, highfreq=2000),
+     corThreshold=0.12, attrs=list(node=list(shape = "ellipse", 
+     fixedsize = TRUE, fillcolor="lightblue", height="2.6", 
+     width="10.5", fontsize="14")))
+
 dev.off()

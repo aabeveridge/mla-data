@@ -46,3 +46,6 @@ write.csv(head(writ.cor, 50), "./CSV_files/write-cor.csv")
 write.csv(head(rhet.cor, 50), "./CSV_files/rhet-cor.csv")
 write.csv(head(comp.cor, 50), "./CSV_files/comp-cor.csv")
 write.csv(head(tech.cor, 50), "./CSV_files/tech-cor.csv")
+
+## Save Document Term Matrix
+save(dtm, file="~/mla_data/data/dtm.rda")
