@@ -21,7 +21,7 @@ word.freq <- rev(word.freq)
 #################################
 
 ## Open PDF device and set location to save file
-png("~/mla_data/plots/freq_2012.png", 600, 480)
+png("~/mla_data/plots/freq_2012.png", 700, 500)
 
 	## Set plot dimensions 
 	par(pin=c(4, 4))
