@@ -6,11 +6,10 @@ library(tm)
 library(Rgraphviz)
 library(ggplot2)
 library(gridExtra)
+library(stringr)
 
-freq.data <- read.csv("~/mla_data/data/2012/CSV_files/freq.csv")
-#d2 <- read.csv("~/mla_data/data/2013/CSV_files/freq.csv")
-#d3 <- read.csv("~/mla_data/data/2014/CSV_files/freq.csv")
-
+#Read in the word frequency for the job description corpus
+freq.data <- read.csv("./data/freq.csv")
 rev(freq.data)
 freq.data <- as.data.frame(freq.data)
 word.names <- head(freq.data$X, 10)
@@ -18,20 +17,24 @@ word.names <- rev(word.names)
 word.freq <- head(freq.data$Total, 10)
 word.freq <- rev(word.freq)
 
+#Creates date label for plots based on the name of the working directory
+plot.date <- getwd()	
+plot.date <- str_sub(plot.date, -4, -1)
+
 #################################
-# 2012 word frequency plot
+# Word Frequency Plot
 #################################
 
 ## Open PNG device and set location to save file
-png("~/mla_data/plots/freq_2012.png", 600, 480)
+png("./visuals/freq_plot.png", 600, 480)
 
 	## Set plot dimensions 
 	par(pin=c(4, 4))
-
+	
 	## Draw plot
 	freq.plot <- barplot(word.freq, names.arg=word.names, horiz=TRUE, 
-						 main="2012 Word Frequencies", ylab=NULL, 
-						 xlab="Frequency", las=2, axes=FALSE)
+						 main=paste(plot.date, "Word Frequencies", sep=" "), 
+						 ylab=NULL, xlab="Frequency", las=2, axes=FALSE)
 	
 	# Starting x-axis position for adding frequency totals to bars
 	freq.pos <- 0.65		
@@ -53,19 +56,19 @@ dev.off()
 ##########################
 
 # Load in an R data space image with a Document Term Matrix
-load("~/mla_data/data/dtm.rda")
+load("./data/dtm.rda")
 
 # Open a PNG device to save the image that contains the cluster
-png("~/mla_data/plots/cor_cluster.png", 700, 500)
+png("./visuals/cor_cluster.png", 700, 500)
 
-## Call a list of attributions to change the look of the cluster graph
-defAttrs <- getDefaultAttrs()
+	## Call a list of attributions to change the look of the cluster graph
+	defAttrs <- getDefaultAttrs()
 
-# Plot the correlation cluster
-plot(dtm, terms=findFreqTerms(dtm, lowfreq=250, highfreq=2000),
-     corThreshold=0.12, attrs=list(node=list(shape = "ellipse", 
-     fixedsize = TRUE, fillcolor="lightblue", height="2.6", 
-     width="10.5", fontsize="14")))
+	# Plot the correlation cluster
+	plot(dtm, terms=findFreqTerms(dtm, lowfreq=250, highfreq=2000),
+     	 corThreshold=0.12, attrs=list(node=list(shape = "ellipse", 
+     	 fixedsize = TRUE, fillcolor="lightblue", height="2.6", 
+     	 width="10.5", fontsize="14")))
 
 # Turn off the PNG device
 dev.off()
@@ -74,23 +77,61 @@ dev.off()
 # Correlation Tables
 #############################
 
-# Create data frame from CSV file with top correlations to "rhetoric"
-rhet.cor <- read.csv("~/mla_data/data/2012/CSV_files/rhet-cor.csv")
+# Create data frames from CSV files with top correlations to "rhetoric,"
+# "composition," "technical," "writing" 
+rhet.cor <- read.csv("./data/rhet-cor.csv")
+comp.cor <- read.csv("./data/comp-cor.csv")
+writ.cor <- read.csv("./data/writ-cor.csv")
+tech.cor <- read.csv("./data/tech-cor.csv")
 
-# Change the column name "X" to an empty space
-colnames(rhet.cor)[1] <- " " 
+# Change the column name "X" for the first column to the year of the data
+colnames(rhet.cor)[1] <- plot.date
+colnames(comp.cor)[1] <- plot.date
+colnames(writ.cor)[1] <- plot.date
+colnames(tech.cor)[1] <- plot.date 
 
 # Set the data frame to the top 10 correlations
 rhet.cor <- head(rhet.cor, 10)
+comp.cor <- head(comp.cor, 10)
+writ.cor <- head(writ.cor, 10)
+tech.cor <- head(tech.cor, 10)
 
 # Open an PNG device to save the image that contains the table below
-png("~/mla_data/visuals/rhet-cor_table.png", 400, 380)
+png("./visuals/rhet-cor_table.png", 400, 380)
 
-# Create the table 
-rhet.cor <- tableGrob(rhet.cor)
-grid.arrange(rhet.cor)
+	# Create the table 
+	rhet.cor <- tableGrob(rhet.cor)
+	grid.arrange(rhet.cor)
 
 # Turn off the PNG device
 dev.off()
 
+# Open an PNG device to save the image that contains the table below
+png("./visuals/comp-cor_table.png", 400, 380)
 
+	# Create the table 
+	comp.cor <- tableGrob(comp.cor)
+	grid.arrange(comp.cor)
+
+# Turn off the PNG device
+dev.off()
+
+# Open an PNG device to save the image that contains the table below
+png("./visuals/writ-cor_table.png", 400, 380)
+
+	# Create the table 
+	writ.cor <- tableGrob(writ.cor)
+	grid.arrange(writ.cor)
+
+# Turn off the PNG device
+dev.off()
+
+# Open an PNG device to save the image that contains the table below
+png("./visuals/tech-cor_table.png", 400, 380)
+
+	# Create the table 
+	tech.cor <- tableGrob(tech.cor)
+	grid.arrange(tech.cor)
+
+# Turn off the PNG device
+dev.off()
