@@ -97,7 +97,7 @@ writ.cor <- head(writ.cor, 10)
 tech.cor <- head(tech.cor, 10)
 
 # Open an PNG device to save the image that contains the table below
-png("./visuals/rhet-cor_table.png", 400, 380)
+png("./visuals/rhet-cor_table.png", 265, 275)
 
 	# Create the table 
 	rhet.cor <- tableGrob(rhet.cor)
@@ -107,7 +107,7 @@ png("./visuals/rhet-cor_table.png", 400, 380)
 dev.off()
 
 # Open an PNG device to save the image that contains the table below
-png("./visuals/comp-cor_table.png", 400, 380)
+png("./visuals/comp-cor_table.png", 265, 275)
 
 	# Create the table 
 	comp.cor <- tableGrob(comp.cor)
@@ -117,7 +117,7 @@ png("./visuals/comp-cor_table.png", 400, 380)
 dev.off()
 
 # Open an PNG device to save the image that contains the table below
-png("./visuals/writ-cor_table.png", 400, 380)
+png("./visuals/writ-cor_table.png", 265, 275)
 
 	# Create the table 
 	writ.cor <- tableGrob(writ.cor)
@@ -127,7 +127,7 @@ png("./visuals/writ-cor_table.png", 400, 380)
 dev.off()
 
 # Open an PNG device to save the image that contains the table below
-png("./visuals/tech-cor_table.png", 400, 380)
+png("./visuals/tech-cor_table.png", 265, 275)
 
 	# Create the table 
 	tech.cor <- tableGrob(tech.cor)
