@@ -4,6 +4,8 @@ This report is a summary of job description data from the MLA Jobs Information L
 
 The Readme file in my [GitHub repository](http:github.com/aaronbev79/mla_data) explains how this data was collected and processed for analysis.  
 
+
+
 ![](./data/2012/visuals/cor_cluster.png)
 
 ![](./data/2012/visuals/freq_plot.png)
@@ -15,6 +17,9 @@ The Readme file in my [GitHub repository](http:github.com/aaronbev79/mla_data) e
 ![](./data/2014/visuals/cor_cluster.png)
 
 ![](./data/2014/visuals/freq_plot.png)
+
+####Correlation Data
+The following tables display word correlation data.
 
 ![](./data/2012/visuals/rhet-cor_table.png)![](./data/2013/visuals/rhet-cor_table.png)![](./data/2014/visuals/rhet-cor_table.png)
 
