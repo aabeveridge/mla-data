@@ -64,11 +64,15 @@ png("./visuals/cor_cluster.png", 700, 500)
 	## Call a list of attributions to change the look of the cluster graph
 	defAttrs <- getDefaultAttrs()
 
+	freq <- sort(colSums(as.matrix(dtm)), decreasing=TRUE)
+	wf <- data.frame(word=names(freq), freq=freq)
+	low.thresh <- wf$freq[30]
+
 	# Plot the correlation cluster
-	plot(dtm, terms=findFreqTerms(dtm, lowfreq=250, highfreq=2000),
-     	 corThreshold=0.12, attrs=list(node=list(shape = "ellipse", 
+	plot(dtm, terms=findFreqTerms(dtm, lowfreq=low.thresh, highfreq=2000),
+     	 corThreshold=0.15, attrs=list(node=list(shape = "ellipse", 
      	 fixedsize = TRUE, fillcolor="lightblue", height="2.6", 
-     	 width="10.5", fontsize="14")))
+     	 width="10.5", fontsize="14")), main=paste(plot.date, "Correlation Cluster", sep=" "))
 
 # Turn off the PNG device
 dev.off()
