@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Use pandoc to create html page from markdown report.md
-pandoc report.md -s -c pandoc.css -o index.html
+pandoc report.md -s -c pandoc.css -o index.html --smart
 
 #Commit changes and push them to github
 git add --all
