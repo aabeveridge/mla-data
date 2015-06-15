@@ -8,7 +8,7 @@ library(tm)
 ## this script.
   
 ## Read all texts into TM data structure called a Corpus
-corpus <- VCorpus(DirSource("./text"))
+corpus <- VCorpus(DirSource("./corpus"))
 	
 ## Remove unnecessary words and punctuation, reduce document, 
 ## stem the corpus, complete the stemmed words, and strip 
