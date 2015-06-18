@@ -29,3 +29,12 @@ The following tables display word correlation data.
 
 ![](./data/2012/visuals/tech-cor_table.png)![](./data/2013/visuals/tech-cor_table.png)![](./data/2014/visuals/tech-cor_table.png)
 
+![](./data/2012/visuals/stud-cor_table.png)![](./data/2013/visuals/stud-cor_table.png)![](./data/2014/visuals/stud-cor_table.png)
+
+![](./data/2012/visuals/game-cor_table.png)![](./data/2013/visuals/game-cor_table.png)![](./data/2014/visuals/game-cor_table.png)
+
+![](./data/2012/visuals/medi-cor_table.png)![](./data/2013/visuals/medi-cor_table.png)![](./data/2014/visuals/medi-cor_table.png)
+
+![](./data/2012/visuals/visu-cor_table.png)![](./data/2013/visuals/visu-cor_table.png)![](./data/2014/visuals/visu-cor_table.png)
+
+![](./data/2012/visuals/ecol-cor_table.png)![](./data/2013/visuals/ecol-cor_table.png)![](./data/2014/visuals/ecol-cor_table.png)

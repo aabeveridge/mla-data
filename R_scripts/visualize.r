@@ -87,6 +87,11 @@ rhet.cor <- read.csv("./data/rhet-cor.csv")
 comp.cor <- read.csv("./data/comp-cor.csv")
 writ.cor <- read.csv("./data/writ-cor.csv")
 tech.cor <- read.csv("./data/tech-cor.csv")
+stud.cor <- read.csv("./data/stud-cor.csv")
+game.cor <- read.csv("./data/game-cor.csv")
+medi.cor <- read.csv("./data/medi-cor.csv")
+visu.cor <- read.csv("./data/visu-cor.csv")
+ecol.cor <- read.csv("./data/ecol-cor.csv")
 
 # Change the column name "X" for the first column to the year of the data
 colnames(rhet.cor)[1] <- plot.date
@@ -136,6 +141,56 @@ png("./visuals/tech-cor_table.png", 255, 275)
 	# Create the table 
 	tech.cor <- tableGrob(tech.cor)
 	grid.arrange(tech.cor)
+
+# Turn off the PNG device
+dev.off()
+
+# Open an PNG device to save the image that contains the table below
+png("./visuals/stud-cor_table.png", 255, 275)
+
+	# Create the table 
+	stud.cor <- tableGrob(stud.cor)
+	grid.arrange(stud.cor)
+
+# Turn off the PNG device
+dev.off()
+
+# Open an PNG device to save the image that contains the table below
+png("./visuals/game-cor_table.png", 255, 275)
+
+	# Create the table 
+	game.cor <- tableGrob(game.cor)
+	grid.arrange(game.cor)
+
+# Turn off the PNG device
+dev.off()
+
+# Open an PNG device to save the image that contains the table below
+png("./visuals/medi-cor_table.png", 255, 275)
+
+	# Create the table 
+	medi.cor <- tableGrob(medi.cor)
+	grid.arrange(medi.cor)
+
+# Turn off the PNG device
+dev.off()
+
+# Open an PNG device to save the image that contains the table below
+png("./visuals/visu-cor_table.png", 255, 275)
+
+	# Create the table 
+	visu.cor <- tableGrob(visu.cor)
+	grid.arrange(visu.cor)
+
+# Turn off the PNG device
+dev.off()
+
+# Open an PNG device to save the image that contains the table below
+png("./visuals/ecol-cor_table.png", 255, 275)
+
+	# Create the table 
+	ecol.cor <- tableGrob(ecol.cor)
+	grid.arrange(ecol.cor)
 
 # Turn off the PNG device
 dev.off()

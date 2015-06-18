@@ -45,12 +45,27 @@ comp.cor <- findAssocs(dtm, "composition", corlimit=0.0)
 ## Calculate and save top 50 word correlations for "technical"
 tech.cor <- findAssocs(dtm, "technical", corlimit=0.0)
 
+stud.cor <- findAssocs(dtm, "studies", corlimit=0.0)
+
+game.cor <- findAssocs(dtm, "game", corlimit=0.0)
+
+medi.cor <- findAssocs(dtm, "media", corlimit=0.0)
+
+visu.cor <- findAssocs(dtm, "visual", corlimit=0.0)
+
+ecol.cor <- findAssocs(dtm, "ecology", corlimit=0.0)
+
 ## Write frequencies and correlations to CSV files
 write.csv(head(freq, 50), "./data/freq.csv")
 write.csv(head(writ.cor, 50), "./data/writ-cor.csv")
 write.csv(head(rhet.cor, 50), "./data/rhet-cor.csv")
 write.csv(head(comp.cor, 50), "./data/comp-cor.csv")
 write.csv(head(tech.cor, 50), "./data/tech-cor.csv")
+write.csv(head(stud.cor, 50), "./data/stud-cor.csv")
+write.csv(head(game.cor, 50), "./data/game-cor.csv")
+write.csv(head(medi.cor, 50), "./data/medi-cor.csv")
+write.csv(head(visu.cor, 50), "./data/visu-cor.csv")
+write.csv(head(ecol.cor, 50), "./data/ecol-cor.csv")
 
 ## Save Document Term Matrix
 save(dtm, file="./data/dtm.rda")
