@@ -117,7 +117,7 @@ visu.cor <- head(visu.cor, 5)
 ecol.cor <- head(ecol.cor, 5)
 
 # Open an PNG device to save the image that contains the table below
-png("./visuals/rhet-cor_table.png", 255, 200)
+png("./visuals/rhet-cor_table.png", 255, 170)
 
 	# Create the table 
 	rhet.cor <- tableGrob(rhet.cor)
@@ -127,7 +127,7 @@ png("./visuals/rhet-cor_table.png", 255, 200)
 dev.off()
 
 # Open an PNG device to save the image that contains the table below
-png("./visuals/comp-cor_table.png", 255, 200)
+png("./visuals/comp-cor_table.png", 255, 170)
 
 	# Create the table 
 	comp.cor <- tableGrob(comp.cor)
@@ -137,7 +137,7 @@ png("./visuals/comp-cor_table.png", 255, 200)
 dev.off()
 
 # Open an PNG device to save the image that contains the table below
-png("./visuals/writ-cor_table.png", 255, 200)
+png("./visuals/writ-cor_table.png", 255, 170)
 
 	# Create the table 
 	writ.cor <- tableGrob(writ.cor)
@@ -147,7 +147,7 @@ png("./visuals/writ-cor_table.png", 255, 200)
 dev.off()
 
 # Open an PNG device to save the image that contains the table below
-png("./visuals/tech-cor_table.png", 255, 200)
+png("./visuals/tech-cor_table.png", 255, 170)
 
 	# Create the table 
 	tech.cor <- tableGrob(tech.cor)
@@ -157,7 +157,7 @@ png("./visuals/tech-cor_table.png", 255, 200)
 dev.off()
 
 # Open an PNG device to save the image that contains the table below
-png("./visuals/stud-cor_table.png", 255, 200)
+png("./visuals/stud-cor_table.png", 255, 170)
 
 	# Create the table 
 	stud.cor <- tableGrob(stud.cor)
@@ -167,7 +167,7 @@ png("./visuals/stud-cor_table.png", 255, 200)
 dev.off()
 
 # Open an PNG device to save the image that contains the table below
-png("./visuals/medi-cor_table.png", 255, 200)
+png("./visuals/medi-cor_table.png", 255, 170)
 
 	# Create the table 
 	medi.cor <- tableGrob(medi.cor)
@@ -177,7 +177,7 @@ png("./visuals/medi-cor_table.png", 255, 200)
 dev.off()
 
 # Open an PNG device to save the image that contains the table below
-png("./visuals/visu-cor_table.png", 255, 200)
+png("./visuals/visu-cor_table.png", 255, 170)
 
 	# Create the table 
 	visu.cor <- tableGrob(visu.cor)
