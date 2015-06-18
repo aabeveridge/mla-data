@@ -21,7 +21,8 @@ corpus <- tm_map(corpus, removeWords, stopwords("english"))
 other.words <- c("english", "will", "university", "applications", 
                  "application", "department", "candidates", "courses", "college", "professor",
                  "letter", "edu", "position", "graduate", "undergraduate", "assistant", "must", 				 "please", "required", "faculty", "include", "applicants", "employer", "apply", 
-				 "listing", "submitted", "september", "october", "november", "available")
+				 "listing", "submitted", "september", "october", "november", "december", "january", 			     "february", "march", "april", "may", "june", "july", "august", "available", "three",
+				 "qualifications", "jil", "appointment")
 corpus <- tm_map(corpus, removeWords, other.words)
 corpus <- tm_map(corpus, removePunctuation)
 corpus <- tm_map(corpus, removeNumbers)

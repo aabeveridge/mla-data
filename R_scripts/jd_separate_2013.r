@@ -43,8 +43,8 @@ for(i in 1:length(d)){
 	jd_meta <- mlatext[jd_head:jd_start]
 
 	jd_text <- str_replace_all(jd_text, "-", " ")
-	jd_text <- str_replace_all(jd_text, "(http|https)([^/]+).*", " ")	
-	jd_meta <- str_extract_all(jd_meta, "-", " ")
+	jd_text <- str_replace_all(jd_text, "/", " ")
+	jd_text <- str_replace_all(jd_text, "(http|https)([^/]+).*", " ")
 		
 	## Save raw text from inidivdual job descriptions into raw folder
 	cat(jd_text, file=paste("./corpus/jd_000a", i, ".txt", sep=""))
