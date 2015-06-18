@@ -168,16 +168,6 @@ png("./visuals/stud-cor_table.png", 255, 275)
 dev.off()
 
 # Open an PNG device to save the image that contains the table below
-png("./visuals/game-cor_table.png", 255, 275)
-
-	# Create the table 
-	game.cor <- tableGrob(game.cor)
-	grid.arrange(game.cor)
-
-# Turn off the PNG device
-dev.off()
-
-# Open an PNG device to save the image that contains the table below
 png("./visuals/medi-cor_table.png", 255, 275)
 
 	# Create the table 
@@ -193,16 +183,6 @@ png("./visuals/visu-cor_table.png", 255, 275)
 	# Create the table 
 	visu.cor <- tableGrob(visu.cor)
 	grid.arrange(visu.cor)
-
-# Turn off the PNG device
-dev.off()
-
-# Open an PNG device to save the image that contains the table below
-png("./visuals/ecol-cor_table.png", 255, 275)
-
-	# Create the table 
-	ecol.cor <- tableGrob(ecol.cor)
-	grid.arrange(ecol.cor)
 
 # Turn off the PNG device
 dev.off()
