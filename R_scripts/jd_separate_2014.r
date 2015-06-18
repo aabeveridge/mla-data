@@ -3,6 +3,7 @@
 #######################################################
 
 library(tm)
+library(stringr)
 
 ## Read in the text data that has been pre-scrubbed from 
 ## the MLA PDFs with pdftotext comand line utility in Linux
@@ -36,9 +37,13 @@ for(i in 1:length(d)){
 	jd_head <- jd_start - 4
 	jd_text <- mlatext[jd_start:jd_end]
 	jd_meta <- mlatext[jd_head:jd_start]
+
+	jd_text <- str_replace_all(jd_text, "-", " ")
+	jd_text <- str_replace_all(jd_text, "(http|https)([^/]+).*", " ")	
+	jd_meta <- str_extract_all(jd_meta, "-", " ")
 		
 	## Save raw text from inidivdual job descriptions into raw folder
-	cat(jd_text, file=paste("./text/jd_000a", i, ".txt", sep=""))
+	cat(jd_text, file=paste("./corpus/jd_000a", i, ".txt", sep=""))
 	
 	## Save metedata related material into meta folder
 	cat(jd_meta, file=paste("./meta/meta_jd_000a", i, ".txt", sep=""))

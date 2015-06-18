@@ -15,9 +15,13 @@ corpus <- VCorpus(DirSource("./corpus"))
 ## extra white space 
 corpus <- tm_map(corpus, stripWhitespace)
 corpus <- tm_map(corpus, removeWords, stopwords("english"))
+
+## This is a list of words common to MLA JIL job descriptions. This 
+## list is applied equally to all years of job description text data.
 other.words <- c("english", "will", "university", "applications", 
                  "application", "department", "candidates", "courses", "college", "professor",
-                 "letter", "edu", "position")
+                 "letter", "edu", "position", "graduate", "undergraduate", "assistant", "must", 				 "please", "required", "faculty", "include", "applicants", "employer", "apply", 
+				 "listing", "submitted", "september", "october", "november", "available")
 corpus <- tm_map(corpus, removeWords, other.words)
 corpus <- tm_map(corpus, removePunctuation)
 corpus <- tm_map(corpus, removeNumbers)
