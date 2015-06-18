@@ -106,16 +106,15 @@ colnames(ecol.cor)[1] <- plot.date
  
 
 # Set the data frame to the top 10 correlations
-rhet.cor <- head(rhet.cor, 10)
-comp.cor <- head(comp.cor, 10)
-writ.cor <- head(writ.cor, 10)
-tech.cor <- head(tech.cor, 10)
-stud.cor <- head(stud.cor, 10)
-game.cor <- head(game.cor, 10)
-medi.cor <- head(medi.cor, 10)
-visu.cor <- head(visu.cor, 10)
-ecol.cor <- head(ecol.cor, 10)
-
+rhet.cor <- head(rhet.cor, 5)
+comp.cor <- head(comp.cor, 5)
+writ.cor <- head(writ.cor, 5)
+tech.cor <- head(tech.cor, 5)
+stud.cor <- head(stud.cor, 5)
+game.cor <- head(game.cor, 5)
+medi.cor <- head(medi.cor, 5)
+visu.cor <- head(visu.cor, 5)
+ecol.cor <- head(ecol.cor, 5)
 
 # Open an PNG device to save the image that contains the table below
 png("./visuals/rhet-cor_table.png", 255, 275)
