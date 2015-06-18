@@ -97,13 +97,25 @@ ecol.cor <- read.csv("./data/ecol-cor.csv")
 colnames(rhet.cor)[1] <- plot.date
 colnames(comp.cor)[1] <- plot.date
 colnames(writ.cor)[1] <- plot.date
-colnames(tech.cor)[1] <- plot.date 
+colnames(tech.cor)[1] <- plot.date
+colnames(stud.cor)[1] <- plot.date
+colnames(game.cor)[1] <- plot.date
+colnames(medi.cor)[1] <- plot.date
+colnames(visu.cor)[1] <- plot.date
+colnames(ecol.cor)[1] <- plot.date
+ 
 
 # Set the data frame to the top 10 correlations
 rhet.cor <- head(rhet.cor, 10)
 comp.cor <- head(comp.cor, 10)
 writ.cor <- head(writ.cor, 10)
 tech.cor <- head(tech.cor, 10)
+stud.cor <- head(stud.cor, 10)
+game.cor <- head(game.cor, 10)
+medi.cor <- head(medi.cor, 10)
+visu.cor <- head(visu.cor, 10)
+ecol.cor <- head(ecol.cor, 10)
+
 
 # Open an PNG device to save the image that contains the table below
 png("./visuals/rhet-cor_table.png", 255, 275)
