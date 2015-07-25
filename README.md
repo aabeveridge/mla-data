@@ -4,4 +4,4 @@ This repository contains corpora of text data mined from the MLA Jobs Informatio
 
 The raw text data for this project was extracted from PDFs downloaded at: http://rhetmap.org and https://www.mla.org/jil_issues
 
-The writing studies related report for this data is available at: http://aaronbeveridge.com/mla_data. All of the code that generates this report is also available in this repository. 
+The writing studies related report for this data is available at: http://aaronbeveridge.com/mla-data. All of the code that generates this report is also available in this repository. 
